@@ -3,21 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start-app": "concurrently \"npm run serve\" \"cd ./api && npm start\"",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "axios": "^0.19.2",
+    "concurrently": "^5.2.0",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "flush-promises": "^1.0.2",
+    "mathjs": "^7.0.2",
+    "moment": "^2.27.0",
+    "nodemon": "^2.0.4",
+    "numeral": "^2.0.6",
+    "vue": "^2.6.11",
+    "vuex": "^3.4.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
-    "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-plugin-unit-jest": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
     "@vue/eslint-config-airbnb": "^5.0.2",
+    "@vue/eslint-config-standard": "^5.1.2",
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",

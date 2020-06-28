@@ -1,0 +1,24 @@
+@import '../variables.scss';
+
+// currency exchanger module
+.currency-exchanger {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 40px;
+
+    & .cta {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    &_hystory-title {
+        & .sub-title-sm {
+            margin-bottom: 0;
+        }
+
+        & .text {
+            padding-bottom: 0;
+            color: $color-five;
+        }
+    }
+}
