@@ -1,10 +1,8 @@
-# free-agent-app
-
 ## Project setup
 You have to do two instalations:
 
-1. 'npm install' or 'npm i'
-2. 'npm install' or 'npm i' in directory  '/api'
+1. 'npm install' or 'npm i' - to install the interface
+2. 'npm install' or 'npm i' in directory  '/api' - to install the server
 
 ### Compiles and hot-reloads for development
 In order to start the app please run
