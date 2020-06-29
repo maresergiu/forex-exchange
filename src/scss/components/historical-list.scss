@@ -41,7 +41,11 @@
         &-text {
             width: 100%;
             padding-bottom: 0;
-            text-align: right;
+            text-align: left;
+
+            @media only screen and (max-width: $breakpointMobile) {
+                text-align: right;
+            }
 
             &:first-child {
                 text-align: left;
