@@ -1,23 +1,20 @@
 # free-agent-app
 
 ## Project setup
-```
-npm install
+You have to do two instalations:
 
-npm install in directory  '/api'
-```
+1. 'npm install' or 'npm i'
+2. 'npm install' or 'npm i' in directory  '/api'
 
 ### Compiles and hot-reloads for development
-```
-npm run start-app
-```
+In order to start the app please run
 
-### Compiles and minifies for production
-```
-npm run build
-```
+1.  npm run start-app
+2.  access http://localhost:8080/ in the browser
 
-### Run your unit tests
-```
-npm run test:unit
-```
+### About the development solution
+The front end is built with Vue.js
+As a state management store I used Vuex
+For http request I have used axios
+
+The solution is using scss
