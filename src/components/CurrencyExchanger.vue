@@ -5,7 +5,9 @@
                 v-if="screenType === 'currency-converter'">
                 <div v-if="httpErrorStageOne === null">
                     <h2 class="sub-title sub-title-xs font-bold ">Enter a value for EUR</h2>
-                    <form name="base-currency">
+                    <form
+                        class="currency-exchanger_form"
+                        name="base-currency">
                         <InputElement
                             label="Euros"
                             inputId="base-currency"
@@ -30,7 +32,7 @@
                         </button>
                     </div>
                     <div v-else>
-                        <p class="text">Please bear with us until we receive the currencie values.</p>
+                        <p class="text">Please bear with us until we receive the currency values.</p>
                     </div>
                 </div>
                 <div v-else>
@@ -118,7 +120,9 @@ export default {
     methods: {
         // store action
         ...mapActions('currencyExchanger', ['setBaseCurrencyValue']),
+        // store action
         ...mapActions('loader', ['setLoaderVisibility']),
+        // toggles the screens
         toggleScreens (screenType){
             this.screenType = screenType
         },
@@ -165,6 +169,7 @@ export default {
             // if form passes validation
             if(this.formErrorState.length === 0) this.requestHistoricalRates()
         },
+        // generates the historical rates for the last 5 days
         async requestHistoricalRates (){
             const pastDates = timeOperations.methods.generateLasNumberOfDays(5),
                 currencies = this.compareCurrencies.join(','),
@@ -176,8 +181,6 @@ export default {
                 for(let i = 0; i < pastDates.length; i += 1){
                     await axios.get(`http://localhost:3000/api/history?currencies=${currencies}&date=${pastDates[i]}`)
                     .then(response => {
-                        this.toggleScreens('currency-compare')
-
                         let httpData = response.data.data
 
                         httpData.date = httpData.date.split('-').reverse().join('/')
@@ -194,6 +197,7 @@ export default {
                     })
                 }
 
+                this.toggleScreens('currency-compare')
                 this.setHistoricalData(historicalCurrencyData)
                 this.setLoaderVisibility(false)
 
@@ -224,8 +228,6 @@ export default {
             if(obj.name === 'base-currency') this.setBaseCurrencyValue(obj.value)
         },
         getOtherCurencies (){
-            // this.otherBaseCurrencies = {'USD':1.121805,'GBP':0.909191,'AUD':1.63457,'CAD':1.536688,'CHF':1.063339,'CNY':7.940589,'SEK':10.471658,'NZD':1.745864}
-
             axios.get('http://localhost:3000/api/latest')
             .then(response => {
                 this.otherBaseCurrencies = response.data.data.rates

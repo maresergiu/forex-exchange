@@ -111,16 +111,20 @@ ol {
     flex-direction: column;
 }
 
+#main {
+    flex-grow: 1;
+}
+
 #site-header,
 #site-footer {
     background: $color-three;
     color: $color-one;
 }
 
-#site-header .sub-title { padding: 10px 0; }
+#site-header {
+    & .sub-title { padding: 10px 0; }
+}
 
-#site-footer .text { padding: 10px 0;  }
-
-#main {
-    flex-grow: 1;
+#site-footer {
+    & .text { padding: 10px 0;  }
 }

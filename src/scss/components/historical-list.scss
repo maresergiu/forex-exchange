@@ -41,6 +41,11 @@
         &-text {
             width: 100%;
             padding-bottom: 0;
+            text-align: right;
+
+            &:first-child {
+                text-align: left;
+            }
         }
     }
 }
