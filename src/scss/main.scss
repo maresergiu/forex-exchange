@@ -33,7 +33,7 @@ ol {
 // helper classes
 .holder {
     max-width: 1200px;
-    padding: 0 40px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -50,9 +50,10 @@ ol {
 .text {
     margin: 0;
     padding-bottom: 10px;
+    font-size: 14px;
 
     &.text-sm {
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 

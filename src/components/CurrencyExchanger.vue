@@ -5,13 +5,13 @@
                 v-if="screenType === 'currency-converter'">
                 <div v-if="httpErrorStageOne === null">
                     <h2 class="sub-title sub-title-xs font-bold ">Enter a value for EUR</h2>
-                    <form>
+                    <form name="base-currency">
                         <InputElement
                             label="Euros"
                             inputId="base-currency"
                             inputName="base-currency"
                             inputType="number"
-                            placeholder="Please enter an ammout"
+                            placeholder="Please enter an amout"
                             :hideLabel="true"
                             :triggerValidation="triggerValidation"
                             @emittedErrorInput="handleErrorInput"

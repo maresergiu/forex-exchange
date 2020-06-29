@@ -3,15 +3,34 @@
 // historical list
 .historical-list {
     &_element {
+        position: relative;
         display: flex;
         padding: 10px;
+        z-index: 1;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            display: none;
+            width: 100vw;
+            height: 100%;
+            transform: translateX(-50%);
+            background-color: inherit;
+            z-index: -1;
+
+            @media only screen and (max-width: $breakpointMobile) {
+                display: block;
+            }
+        }
 
         &:nth-child(2n+1){
-            background-color: $color-four;
+            background-color: $color-seven;
         }
 
         &:nth-child(2n+2){
-            background-color: $color-seven;
+            background-color: $color-four;
         }
 
         &.historical-list_element-headings {
