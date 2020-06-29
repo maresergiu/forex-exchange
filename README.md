@@ -1,3 +1,6 @@
+## About the project
+This project is forex exchange app based on Rest API's
+
 ## Project setup
 You have to do two instalations:
 
