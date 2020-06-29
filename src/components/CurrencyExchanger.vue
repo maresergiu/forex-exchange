@@ -107,8 +107,6 @@ export default {
             if(this.compareCurrencies.length > 1){
                 if(this.getBaseCurrencyValue){
                     // if the base currency has valid user input and the user selected two comparable currencies, change the screen
-                    this.toggleScreens('currency-compare')
-
                     this.requestHistoricalRates()
                 }else{
                     // if the base currency doesn't have valid user input and the user selected two comparable currencies trigger the validation
@@ -177,6 +175,7 @@ export default {
 
             if(currencies && pastDates.length){
                 this.setLoaderVisibility(true)
+                this.toggleScreens('currency-compare')
 
                 for(let i = 0; i < pastDates.length; i += 1){
                     await axios.get(`http://localhost:3000/api/history?currencies=${currencies}&date=${pastDates[i]}`)
@@ -192,16 +191,14 @@ export default {
 
                         historicalCurrencyData.push(httpData)
                     })
-                    .catch(error => {
-                        // error handling
+                    .catch(() => {
+                        this.setScreenOneHttpError('We couldn\'t access the server, something went wrong. Please refresh the browser and check the internet connection!')
+                        this.toggleScreens('currency-converter')
                     })
                 }
 
-                this.toggleScreens('currency-compare')
                 this.setHistoricalData(historicalCurrencyData)
                 this.setLoaderVisibility(false)
-
-                // this.historicalCurrencyData = [{"success":true,"timestamp":1593425165,"historical":true,"base":"EUR","date":"29/06/2020","rates":{"USD":"5.64","GBP":"4.57"}},{"success":true,"timestamp":1593388799,"historical":true,"base":"EUR","date":"28/06/2020","rates":{"USD":"5.61","GBP":"4.55"}},{"success":true,"timestamp":1593302399,"historical":true,"base":"EUR","date":"27/06/2020","rates":{"USD":"5.61","GBP":"4.55"}},{"success":true,"timestamp":1593215999,"historical":true,"base":"EUR","date":"26/06/2020","rates":{"USD":"5.61","GBP":"4.55"}},{"success":true,"timestamp":1593129599,"historical":true,"base":"EUR","date":"25/06/2020","rates":{"USD":"5.61","GBP":"4.52"}}]
             }
         },
         setHistoricalData (dataArray = []){
@@ -234,7 +231,7 @@ export default {
 
                 this.generateExchangeRates()
             })
-            .catch(error => {
+            .catch(() => {
                 this.setScreenOneHttpError('We couldn\'t access the server, something went wrong. Please refresh the browser and check the internet connection!')
             })
             .then(() => this.setLoaderVisibility(false))
