@@ -7,6 +7,7 @@
         </header>
         <main id="main">
             <CurrencyExchanger />
+            <Loader />
         </main>
         <footer id="site-footer">
             <div class="holder">
@@ -21,11 +22,13 @@ import './scss/main.scss'
 import './scss/libs/normalize.scss'
 
 import CurrencyExchanger from './components/CurrencyExchanger.vue'
+import Loader from './components/Loader.vue'
 
 export default {
     name: 'App',
     components: {
-        CurrencyExchanger
+        CurrencyExchanger,
+        Loader
     }
 }
 </script>

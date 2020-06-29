@@ -1,0 +1,27 @@
+@import '../variables.scss';
+
+// historical list
+.historical-list {
+    &_element {
+        display: flex;
+        padding: 10px;
+
+        &:nth-child(2n+1){
+            background-color: $color-four;
+        }
+
+        &:nth-child(2n+2){
+            background-color: $color-seven;
+        }
+
+        &.historical-list_element-headings {
+            background-color: $color-ten;
+        }
+
+        &-heading,
+        &-text {
+            width: 100%;
+            padding-bottom: 0;
+        }
+    }
+}
