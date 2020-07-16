@@ -2,7 +2,7 @@
     <div id="app">
         <header id="site-header">
             <div class="holder">
-                <h1 class="sub-title">FreeAgent UI Code Challenge</h1>
+                <h1 class="sub-title">FX App</h1>
             </div>
         </header>
         <main id="main">
@@ -11,7 +11,7 @@
         </main>
         <footer id="site-footer">
             <div class="holder">
-                <p class="text">FreeAgent UI Code Challenge</p>
+                <p class="text">Sergiu Mare - Front End Developer</p>
             </div>
         </footer>
     </div>
