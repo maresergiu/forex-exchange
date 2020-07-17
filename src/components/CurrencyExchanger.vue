@@ -126,6 +126,8 @@ export default {
         },
         setScreenOneHttpError (httpErrorStageOne = null){
             this.httpErrorStageOne = httpErrorStageOne
+
+            this.setBaseCurrencyValue(0)
         },
         triggerFormValidation (){
             this.triggerValidation += 1
