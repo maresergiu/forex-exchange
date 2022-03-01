@@ -164,7 +164,7 @@ export default {
             // revalidate
             this.triggerFormValidation()
 
-            await flushPromises();
+            await flushPromises()
 
             // if form passes validation
             if(this.formErrorState.length === 0) this.requestHistoricalRates()

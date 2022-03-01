@@ -1,10 +1,10 @@
 <template>
-    <div
-        class="loader"
-        :class="{'active': getLoaderVisibility}">
-        <div class="loader-circle"></div>
-        <div class="loader-circle"></div>
-    </div>
+  <div
+    class="loader"
+    :class="{'active': getLoaderVisibility}">
+    <div class="loader-circle"></div>
+    <div class="loader-circle"></div>
+  </div>
 </template>
 
 <script>
