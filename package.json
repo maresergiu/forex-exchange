@@ -17,7 +17,7 @@
     "flush-promises": "^1.0.2",
     "mathjs": "^7.0.2",
     "moment": "^2.27.0",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.20",
     "numeral": "^2.0.6",
     "vue": "^2.6.11",
     "vuex": "^3.4.0"
